@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input{
+            width:50px;
+            height:50px;
+            font-size:28px;
+            color:rgb(29, 91, 206);
+        }
+        #inp1
+        {
+            width: 400px;
+            text-align: center;
+        }
+        #equal
+        {
+            height:350px;
+        }
+        h1{
+            background-color: rgb(72, 181, 231);
+            text-align: center;
+            font-size: 50px;
+            color: rgb(1, 12, 11)
+            font-style: Times New Roman;
+        }
+        table{
+            background-color:rgb(86, 144, 209);
+        }
+    </style>
+</head>
+<body>
+    <h1>CALCULATOR</h1>
+    <table border="3" cellpadding="20px" cellspacing="0px" align="center">
+        <tr>
+           <td colspan="4"><input type="text" id="inp1"></td>
+        </tr>
+        <tr>
+            <td><input type="button"value="/" onclick="displayData('/')"></td>
+            <td><input type="button"value="*" onclick="displayData('*')"></td>
+            <td><input type="button"value="-" onclick="displayData('-')"></td>
+            <td><input type="button"value="+" onclick="displayData('+')"></td>
+        </tr
+        <tr>
+            <td><input type="button" value="9" onclick="displayData('9')"></td>
+            <td><input type="button" value="8" onclick="displayData('8')"></td>
+            <td><input type="button" value="7" onclick="displayData('7')"></td>
+            <td rowspan="3"><input type="button" value="=" onclick="calculation()" id="equal"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="6" onclick="displayData('6')"></td>
+            <td><input type="button" value="5" onclick="displayData('5')"></td>
+            <td><input type="button" value="4" onclick="displayData('4')"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="3" onclick="displayData('3')"></td>
+            <td><input type="button" value="2" onclick="displayData('2')"></td>
+            <td><input type="button" value="1" onclick="displayData('1')"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="0" onclick="displayData('0')"></td>
+            <td><input type="button" value="." onclick="displayData('.')"></td>
+            <td><input type="button" value="clr" onclick="clear1()"></td>
+            <td><input type="button" value="del" onclick="delete1()"></td>
+        </tr>
+        </table>
+        
+        <script>
+            function displayData(data)
+            {
+                document.querySelector("#inp1").value+=data
+            }
+            function calculation()
+            {
+                let num=document.querySelector("#inp1").value;
+                console.log(num);
+                let a=eval(num);
+                console.log(a);
+                document.querySelector("#inp1").value=a
+            }
+            function clear1()
+            {
+                document.querySelector("#inp1").value=""
+            }
+            function delete1()
+            {
+               let res= document.querySelector("#inp1");
+               res.value=res.value.slice(0,-1);
+            }
+        </script>
+        </body>
+</html>
